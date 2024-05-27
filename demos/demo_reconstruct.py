@@ -121,7 +121,7 @@ if __name__ == '__main__':
                         help='whether to save 2D and 3D keypoints' )
     parser.add_argument('--saveDepth', default=False, type=lambda x: x.lower() in ['true', '1'],
                         help='whether to save depth image' )
-    parser.add_argument('--saveObj', default=False, type=lambda x: x.lower() in ['true', '1'],
+    parser.add_argument('--saveObj', default=True, type=lambda x: x.lower() in ['true', '1'],
                         help='whether to save outputs as .obj, detail mesh will end with _detail.obj. \
                             Note that saving objs could be slow' )
     parser.add_argument('--saveMat', default=False, type=lambda x: x.lower() in ['true', '1'],
