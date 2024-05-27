@@ -27,7 +27,7 @@ Clone the repo:
 2. Run demos  （下载网盘里的generic model pkl 和deca model tar到data文件夹中）将我的图片放在主目录下，删除TestSamples文件夹
     a. **reconstruction**  
     ```bash
-    python demos/demo_reconstruct.py -i myphoto.png  --saveObj True
+    python demos/demo_reconstruct.py -i myphoto.png  
     ```   
     to visualize the predicted 2D landmanks, 3D landmarks (red means non-visible points), coarse geometry, detailed geometry, and depth.   
     <p align="center">   
