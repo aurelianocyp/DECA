@@ -5,20 +5,17 @@ RTX 2080 Ti(11GB) * 1
 ## Getting Started
 Clone the repo:
   ```bash
-  git clone https://github.com/YadiraF/DECA
+  git clone https://github.com/aurelianocyp/DECA
   cd DECA
   ```  
   ```bash
   pip install -r requirements.txt
   ```
-  Or use virtual environment by runing 
-  ```bash
-  bash install_conda.sh
-  ```
+
   For visualization, we use our rasterizer that uses pytorch JIT Compiling Extensions. If there occurs a compiling error, you can install [pytorch3d](https://github.com/facebookresearch/pytorch3d/blob/master/INSTALL.md) instead and set --rasterizer_type=pytorch3d when running the demos.
 
 ### Usage
-1. Prepare data   
+1. Prepare data（需要albedo就做这一步，不需要就不做）
     run script: 
     ```bash
     bash fetch_data.sh
@@ -27,10 +24,10 @@ Clone the repo:
     (Optional for Albedo)   
     follow the instructions for the [Albedo model](https://github.com/TimoBolkart/BFM_to_FLAME) to get 'FLAME_albedo_from_BFM.npz', put it into ./data
 
-2. Run demos  
+2. Run demos  （下载网盘里的generic model pkl 和deca model tar到data文件夹中）将我的图片放在主目录下，删除TestSamples文件夹
     a. **reconstruction**  
     ```bash
-    python demos/demo_reconstruct.py -i TestSamples/examples --saveDepth True --saveObj True
+    python demos/demo_reconstruct.py -i myphoto.png  --saveObj True
     ```   
     to visualize the predicted 2D landmanks, 3D landmarks (red means non-visible points), coarse geometry, detailed geometry, and depth.   
     <p align="center">   
