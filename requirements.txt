@@ -11,7 +11,7 @@ PyYAML==5.1.1
 #torchvision==0.7.0
 face-alignment
 yacs==0.1.8
-kornia
+kornia==0.5.3
 ninja
 fvcore
 # pytorch3d    
