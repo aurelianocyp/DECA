@@ -1,5 +1,7 @@
 Python  3.8(ubuntu18.04)
+
 Cuda  11.3
+
 RTX 2080 Ti(11GB) * 1
 
 ## Getting Started
@@ -9,10 +11,12 @@ Clone the repo:
   cd DECA
   ```  
   ```bash
+  pip install torch==1.7.1+cu101 torchvision==0.8.2+cu101 torchaudio==0.7.2 -f https://download.pytorch.org/whl/torch_stable.html
   pip install -r requirements.txt
   ```
-
-  For visualization, we use our rasterizer that uses pytorch JIT Compiling Extensions. If there occurs a compiling error, you can install [pytorch3d](https://github.com/facebookresearch/pytorch3d/blob/master/INSTALL.md) instead and set --rasterizer_type=pytorch3d when running the demos.
+如果是Windows运行，还需要安装vs的英文语言包。并且把D:\appl\vs2019\VC\Tools\MSVC\14.29.30133\bin\Hostx64\x64添加到环境变量，主要是为了目录里的cl.dll文件。
+  
+For visualization, we use our rasterizer that uses pytorch JIT Compiling Extensions. If there occurs a compiling error, you can install [pytorch3d](https://github.com/facebookresearch/pytorch3d/blob/master/INSTALL.md) instead and set --rasterizer_type=pytorch3d when running the demos.
 
 ### Usage
 1. Prepare data（需要albedo就做这一步，不需要就不做）
@@ -25,7 +29,6 @@ Clone the repo:
     follow the instructions for the [Albedo model](https://github.com/TimoBolkart/BFM_to_FLAME) to get 'FLAME_albedo_from_BFM.npz', put it into ./data
 
 2. Run demos  （下载网盘里的generic model pkl 和deca model tar到data文件夹中）将我的图片放在主目录下，删除TestSamples文件夹
-    a. **reconstruction**  
     ```bash
     python demos/demo_reconstruct.py -i myphoto.png  
     ```   
