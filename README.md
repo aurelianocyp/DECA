@@ -1,7 +1,5 @@
 Python  3.8(ubuntu18.04)
 
-Cuda  11.3
-
 RTX 2080 Ti(11GB) * 1
 
 ## Getting Started
@@ -11,7 +9,7 @@ Clone the repo:
   cd DECA
   ```  
   ```bash
-  pip install torch==1.7.1+cu101 torchvision==0.8.2+cu101 torchaudio==0.7.2 -f https://download.pytorch.org/whl/torch_stable.html
+ pip install torch==1.6.0+cu101 torchvision==0.7.0+cu101 -f https://download.pytorch.org/whl/torch_stable.html
   pip install -r requirements.txt
   ```
 如果是Windows运行，还需要安装vs的英文语言包。并且把D:\appl\vs2019\VC\Tools\MSVC\14.29.30133\bin\Hostx64\x64添加到环境变量，主要是为了目录里的cl.dll文件。
