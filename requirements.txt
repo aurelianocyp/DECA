@@ -10,6 +10,7 @@ PyYAML==5.1.1
 #torch==1.6.0   # for compatible with pytorch3d
 #torchvision==0.7.0
 face-alignment
+numba==0.49.0
 yacs==0.1.8
 kornia==0.5.3
 ninja

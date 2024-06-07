@@ -23,6 +23,7 @@ import numpy as np
 import torch
 import torch.nn.functional as F
 
+
 def rot_mat_to_euler(rot_mats):
     # Calculates rotation matrix to euler angles
     # Careful for extreme cases of eular angles like [0.0, pi, 0.0]
@@ -30,6 +31,7 @@ def rot_mat_to_euler(rot_mats):
     sy = torch.sqrt(rot_mats[:, 0, 0] * rot_mats[:, 0, 0] +
                     rot_mats[:, 1, 0] * rot_mats[:, 1, 0])
     return torch.atan2(-rot_mats[:, 2, 0], sy)
+
 
 def find_dynamic_lmk_idx_and_bcoords(vertices, pose, dynamic_lmk_faces_idx,
                                      dynamic_lmk_b_coords,
@@ -220,9 +222,12 @@ def lbs(betas, pose, v_template, shapedirs, posedirs, J_regressor, parents,
     homogen_coord = torch.ones([batch_size, v_posed.shape[1], 1],
                                dtype=dtype, device=device)
     v_posed_homo = torch.cat([v_posed, homogen_coord], dim=2)
+    # print("T.shape",T.shape) # T.shape torch.Size([1, 5023, 4, 4])
+    # torch.Size([1, 5023, 4, 1])
     v_homo = torch.matmul(T, torch.unsqueeze(v_posed_homo, dim=-1))
 
     verts = v_homo[:, :, :3, 0]
+    # print("verts.shape", verts.shape) # torch.Size([1, 5023, 3])
 
     return verts, J_transformed
 

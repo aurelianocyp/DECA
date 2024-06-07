@@ -33,9 +33,7 @@ For visualization, we use our rasterizer that uses pytorch JIT Compiling Extensi
     <p align="center">   
     <img src="Doc/images/id04657-PPHljWCZ53c-000565_inputs_inputs_vis.jpg">
     </p>  
-    <p align="center">   
-    <img src="Doc/images/IMG_0392_inputs_vis.jpg">
-    </p>  
+
     You can also generate an obj file (which can be opened with Meshlab) that includes extracted texture from the input image.  
 
     Please run `python demos/demo_reconstruct.py --help` for more details. 

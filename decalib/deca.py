@@ -163,6 +163,11 @@ class DECA(nn.Module):
         batch_size = images.shape[0]
         
         ## decode
+        """
+        codedict['shape'] torch.Size([1, 100])
+        codedict['exp'] torch.Size([1, 50])
+        codedict['pose'] torch.Size([1, 6])
+        """
         verts, landmarks2d, landmarks3d = self.flame(shape_params=codedict['shape'], expression_params=codedict['exp'], pose_params=codedict['pose'])
         if self.cfg.model.use_tex:
             albedo = self.flametex(codedict['tex'])
@@ -287,6 +292,7 @@ class DECA(nn.Module):
         '''
         i = 0
         vertices = opdict['verts'][i].cpu().numpy()
+        # print("vertices", vertices.shape)  vertices (5023, 3)
         faces = self.render.faces[0].cpu().numpy()
         texture = util.tensor2image(opdict['uv_texture_gt'][i])
         uvcoords = self.render.raw_uvcoords[0].cpu().numpy()
