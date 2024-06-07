@@ -1,7 +1,7 @@
 Python  3.8(ubuntu18.04)
 Cuda  11.3
 RTX 2080 Ti(11GB) * 1
-
+ddd
 ## Getting Started
 Clone the repo:
   ```bash
